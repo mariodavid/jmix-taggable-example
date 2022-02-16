@@ -6,14 +6,13 @@ plugins {
 apply plugin: 'org.springframework.boot'
 
 jmix {
-    bomVersion = '1.1.2'
+    bomVersion = '1.1.3'
 }
 
 group = 'com.company'
 version = '0.0.1-SNAPSHOT'
 
 repositories {
-    mavenLocal()
     mavenCentral()
     maven {
         url 'https://global.repo.jmix.io/repository/public'
@@ -34,15 +33,16 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    runtimeOnly 'org.hsqldb:hsqldb'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 
 
-    //implementation 'de.diedavids.jmix.softreference:jmix-entity-soft-reference-starter:1.1.0'
-    implementation 'de.diedavids.jmix.taggable:jmix-taggable-starter:1.0.0-SNAPSHOT'
+    implementation 'de.diedavids.jmix.softreference:jmix-entity-soft-reference-starter:1.1.0'
+
+    implementation 'de.diedavids.jmix.taggable:jmix-taggable-starter:0.2.0'
+    implementation("org.hsqldb:hsqldb")
 }
 
 test {

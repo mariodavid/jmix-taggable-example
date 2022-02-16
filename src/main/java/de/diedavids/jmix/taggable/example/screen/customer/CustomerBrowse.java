@@ -28,4 +28,19 @@ public class CustomerBrowse extends StandardLookup<Customer> implements WithTags
     public ButtonsPanel getButtonsPanel() {
         return buttonsPanel;
     }
+
+    @Override
+    public boolean showTagsInList() {
+        return true;
+    }
+
+    @Override
+    public OpenMode tagLinkOpenMode() {
+        return OpenMode.NEW_TAB;
+    }
+
+    @Override
+    public boolean showTagsAsLink() {
+        return true;
+    }
 }
